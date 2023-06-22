@@ -5,7 +5,6 @@ import com.formaciondbi.springboot.app.item.models.entity.Producto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
 import java.util.List;
 
 @FeignClient(name="servicio-productos", url = "localhost:8001")
