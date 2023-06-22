@@ -1,7 +1,8 @@
-package com.formaciondbi.springboot.app.item.models.service;
+package com.formaciondbi.springboot.app.item.models.service.impl;
 
-import com.formaciondbi.springboot.app.item.models.Item;
-import com.formaciondbi.springboot.app.item.models.Producto;
+import com.formaciondbi.springboot.app.item.models.entity.Item;
+import com.formaciondbi.springboot.app.item.models.entity.Producto;
+import com.formaciondbi.springboot.app.item.models.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

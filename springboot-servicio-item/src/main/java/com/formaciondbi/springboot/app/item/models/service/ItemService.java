@@ -1,6 +1,6 @@
 package com.formaciondbi.springboot.app.item.models.service;
 
-import com.formaciondbi.springboot.app.item.models.Item;
+import com.formaciondbi.springboot.app.item.models.entity.Item;
 
 import java.util.List;
 

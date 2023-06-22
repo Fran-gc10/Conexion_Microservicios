@@ -1,4 +1,4 @@
-package com.formaciondbi.springboot.app.item.models;
+package com.formaciondbi.springboot.app.item.models.entity;
 
 import java.util.Date;
 
