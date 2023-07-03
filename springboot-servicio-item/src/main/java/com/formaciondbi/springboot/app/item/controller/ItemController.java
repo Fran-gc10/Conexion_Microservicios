@@ -17,12 +17,12 @@ public class ItemController {
     @Qualifier("serviceFeign")
     private ItemService itemService;
 
-    @GetMapping("/items")
+    @GetMapping
     public List<Item> findAll(){
         return itemService.findAll();
     }
 
-    @GetMapping("/items/{id}/cantidad/{cantidad}")
+    @GetMapping("/{id}/cantidad/{cantidad}")
     public Item findById(@PathVariable Long id, @PathVariable Integer cantidad){
         return itemService.finById(id, cantidad);
     }
