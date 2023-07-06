@@ -6,8 +6,18 @@ spring:
           uri: lb://servicio-productos
           predicates:
             - Path=/api/productos/**
+            #- Header=token, \d+       #ESTO SIGNIFICA CUALQUIER DIGITO
+            #- Header=Content-Type, application/json
+            - Method=GET,POST
+            #- Query=color, verde
+            #- Query=tipo, lache
           filters:
             - StripPrefix=2
+            - name: Ejemplo
+              args:
+                mensaje: Hola mi mensaje personalizado
+                cookieNombre: usuario
+                cookieValor: Fran
 
         - id: servicio-items
           uri: lb://servicio-items
@@ -15,3 +25,7 @@ spring:
             - Path=/api/items/**
           filters:
             - StripPrefix=2
+            - AddRequestHeader=token-request, 123456
+            - AddResponseHeader=token-response, 12345678
+            - SetResponseHeader=Content-Type, text/plain
+            - AddRequestParameter=nombre, Francisco

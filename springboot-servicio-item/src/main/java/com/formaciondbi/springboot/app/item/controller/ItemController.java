@@ -4,9 +4,7 @@ import com.formaciondbi.springboot.app.item.models.entity.Item;
 import com.formaciondbi.springboot.app.item.models.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,8 +15,11 @@ public class ItemController {
     @Qualifier("serviceFeign")
     private ItemService itemService;
 
-    @GetMapping
-    public List<Item> findAll(){
+
+    @GetMapping                 //INYECTAMOS LOS PARAMETROS DEFINIDOS ENB EL ARCHIVO CONFIGURACION DEL FILTRO
+    public List<Item> findAll(@RequestParam(name = "nombre", required = false) String nombre, @RequestHeader (name = "token-request", required = false) String token){
+        System.out.println(nombre);
+        System.out.println(token);
         return itemService.findAll();
     }
 
