@@ -8,6 +8,7 @@ public class Producto {
     private String nombre;
     private Double precio;
     private Date createAt;
+    private int port;
 
 
     public Long getId() {
@@ -40,5 +41,13 @@ public class Producto {
 
     public void setCreateAt(Date createAt) {
         this.createAt = createAt;
+    }
+
+    public int getPort() {
+        return port;
+    }
+
+    public void setPort(int port) {
+        this.port = port;
     }
 }
